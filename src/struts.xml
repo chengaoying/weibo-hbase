@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="do" />
+	
+	<package name="weibo" extends="struts-default">
+		<action name="index" class="org.robby.IndexAction">
+			<result>/index.jsp</result>
+		</action>
+		
+		<action name="logout" class="org.robby.IndexAction" method="Logout">
+			<result>/index.jsp</result>
+		</action>
+		
+		<action name="unfollow" class="org.robby.UserAction" method="Unfollow">
+			<result>/error.jsp</result>
+		</action>
+		
+		<action name="follow" class="org.robby.UserAction" method="Follow">
+			<result>/error.jsp</result>
+		</action>
+		
+		<action name="post" class="org.robby.UserAction" method="Post">
+			<result>/error.jsp</result>
+		</action>
+		
+		<action name="login" class="org.robby.UserAction" method="Login">
+			<result type="redirect">index.do</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		<action name="submitpost" class="org.robby.UserAction" method="SubmitPost">
+			<result>/error.jsp</result>
+		</action>
+		
+		<action name="register" class="org.robby.UserAction" method="Register">
+			<result>/register.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		
+		
+		<action name="cdrindex" class="org.robby.cdr.CdrIndexAction">
+			<result>/cdr/cdrindex.jsp</result>
+		</action>
+		
+		<action name="search" class="org.robby.cdr.SearchAction">
+			<result>/cdr/search.jsp</result>
+		</action>
+		
+		<action name="cdr_daily" class="org.robby.cdr.CdrDailyAction">
+			<result>/cdr/cdr_daily.jsp</result>
+		</action>
+		
+		<action name="cdr_dailyac" class="org.robby.cdr.CdrDailyACAction">
+			<result>/cdr/cdr_dailyac.jsp</result>
+		</action>
+		
+	</package>
+</struts>
